@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ポケモン クイズ App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="quiz-container">
+    <div id="difficulty-selection">
+      <h1>ポケモン</h1>
+      <h2 class="quiz-subtitle">クイズ</h2>
+      
+      <p class="quiz-description">今回はカントー地方 (No.1〜151) の問題だよ！</p>
+      
+      <button id="easy-btn">クイズ開始！</button>
+    </div>
+    
+    <div id="quiz-screen" style="display: none;">
+      <button id="reset-button">最初に戻る</button>
+      <p id="score-display">正解数: 0 / 0</p>
+      <h1>Q1</h1>
+      
+      <div id="pokemon-image-container">
+        <img id="pokemon-image" src="" alt="ポケモン画像" style="display:none;">
+      </div>
+      
+      <div id="cry-hint-area">
+          <button id="play-cry-btn" style="display:none;">鳴き声を聞く (ヒント)</button>
+          <audio id="pokemon-cry" style="display:none;"></audio>
+      </div>
+      <p id="question">クイズの質問がここに表示されます。</p>
+      
+      <div id="hint-area" style="margin-top: 15px;">
+        <p id="text-hint-display" style="display: none; border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; background-color: #ffe0b2; color: #333; text-align: left;"></p>
+        
+        <button id="show-text-hint-btn" class="hint-btn">画像・テキストヒントを見る</button>
+      </div>
+      
+      <p id="result-message" style="margin-top: 20px; font-weight: bold; font-size: 1.2em;"></p>
+
+      <div id="choices">
+        </div>
+    </div>
+  </div>
+  <script src="app.js" defer></script>
+</body>
+
+</html>
