@@ -1,13 +1,13 @@
 body {
   font-family: 'Comic Sans MS', 'Segoe UI', Arial, sans-serif; 
-  /* ★修正: グラデーションを正しく適用し、色が維持されるように調整★ */
   background: linear-gradient(135deg, #fce4ec 0%, #e3f2fd 100%); 
   margin: 0;
-  padding: 0;
+  /* ★修正: スクロールを可能にし、上下に余白を設ける★ */
+  padding: 20px 0; 
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+  align-items: flex-start; /* 上寄せ */
+  min-height: 100vh; 
   color: #4a4a4a; 
 }
 
@@ -25,7 +25,7 @@ body {
 /* ホーム画面のH1（ポケモン）のスタイル */
 #difficulty-selection h1 {
   font-size: 3.5em; 
-  color: #f6a086; /* ご提示の色を維持 */
+  color: #f6a086; 
   margin: 0; 
   padding: 0;
   line-height: 1;
@@ -37,7 +37,7 @@ body {
 /* クイズ画面内のh1のスタイル（Q1, Q2... および 結果発表！） */
 #quiz-screen h1 {
   font-size: 2.2em; 
-  color: #ff8a65; /* ホーム画面と区別するため以前の色を維持 */
+  color: #ff8a65; 
   margin-bottom: 20px; 
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); 
   letter-spacing: normal;
@@ -47,7 +47,7 @@ body {
 .quiz-subtitle {
   font-size: 2.0em; 
   color: #64b5f6; 
-  margin-top: -10px; /* 調整 */
+  margin-top: -10px; 
   margin-bottom: 5px; 
   font-weight: bold;
   letter-spacing: 5px;
@@ -145,7 +145,7 @@ button:disabled {
   color: white; 
 }
 
-/* ★鳴き声ボタンのスタイルを復元★ */
+/* 鳴き声ボタンのスタイル */
 #play-cry-btn {
     background-color: #4db6ac; 
     color: white;
@@ -229,7 +229,7 @@ button:disabled {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-/* ★画像コンテナと画像自体のスタイルを復元★ */
+/* 画像コンテナと画像自体のスタイルを復元 */
 #pokemon-image-container {
     height: 150px; 
     display: flex;
@@ -249,14 +249,14 @@ button:disabled {
     transition: opacity 0.3s, filter 0.5s ease-out; 
 }
 
-/* ★クラシックな黒シルエットヒントを復元★ */
+/* クラシックな黒シルエットヒントを復元 */
 #pokemon-image.silhouette-hint {
-    filter: brightness(0) contrast(0); /* 真っ黒なシルエットを作成 */
+    filter: brightness(0) contrast(0); 
     opacity: 1; 
 }
 
 
-/* ★結果画面でのスコア表示を3.5emに拡大 (ご要望対応済み)★ */
+/* 結果画面でのスコア表示を3.5emに拡大 (ご要望対応済み) */
 .final-score {
   font-size: 3.5em !important; 
   font-weight: bold;
