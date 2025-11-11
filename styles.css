@@ -1,267 +1,232 @@
 body {
-  font-family: 'Comic Sans MS', 'Segoe UI', Arial, sans-serif; 
-  /* ★修正: グラデーションを削除し、単色（淡いピンク: #fce4ec）に変更★ */
-  background-color: #fce4ec; 
-  /* ------------------------------------------------------------- */
-  margin: 0;
-  padding: 20px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; 
-  color: #4a4a4a; 
-}
-
-.quiz-container {
-  background-color: #ffffff; 
-  padding: 30px; 
-  border-radius: 25px; 
-  width: 320px; 
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
-  text-align: center;
-  border: 2px solid #ffccbc; 
-}
-
-
-/* ホーム画面のH1（ポケモン）のスタイル */
-#difficulty-selection h1 {
-  font-size: 3.5em; 
-  color: #f6a086;
-  margin: 0; 
-  padding: 0;
-  line-height: 1;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
-               -2px -2px 0px #fff; 
-  letter-spacing: 2px; 
-}
-
-/* クイズ画面内のh1のスタイル（Q1, Q2... および 結果発表！） */
-#quiz-screen h1 {
-  font-size: 2.2em; 
-  color: #ff8a65;
-  margin-bottom: 20px; 
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); 
-  letter-spacing: normal;
-}
-
-
-.quiz-subtitle {
-  font-size: 2.0em; 
-  color: #64b5f6; 
-  margin-top: -10px;
-  margin-bottom: 5px; 
-  font-weight: bold;
-  letter-spacing: 5px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-  padding: 0;
-  border-bottom: none; 
-}
-
-.quiz-description {
-    font-size: 0.95em;
-    color: #4db6ac; 
-    font-weight: bold;
-    margin-top: 15px;
-    margin-bottom: 25px;
-    padding: 5px 10px;
-    background-color: #e0f7fa; 
-    border-radius: 10px;
-    border: 1px solid #b2ebf2;
-}
-
-p {
-  font-size: 1.1em;
-  line-height: 1.5;
-}
-
-/* 共通ボタンのスタイル */
-button {
-  background-color: #ffab91; 
-  color: white;
-  padding: 12px 20px; 
-  border: none;
-  border-radius: 20px; 
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px; 
-  margin-top: 15px;
-  transition: all 0.3s ease; 
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
-}
-
-button:hover:not(:disabled) {
-  background-color: #ff7043; 
-  transform: translateY(-2px); 
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); 
-}
-
-button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  box-shadow: none;
-  transform: none;
-}
-
-
-#choices button {
-  background-color: #c5e1a5; 
-  color: #4a4a4a; 
-  padding: 12px 15px;
-  margin-bottom: 12px;
-  border: 1px solid #aed581; 
-  border-radius: 15px; 
-  font-size: 16px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
-}
-
-#choices button:hover:not(:disabled) {
-  background-color: #9ccc65; 
-  color: white; 
-}
-
-
-#choices button.correct-choice {
-  background-color: #81c784 !important; 
-  color: white;
-  border-color: #66bb6a !important;
-  box-shadow: 0 3px 8px rgba(0, 180, 0, 0.2);
-}
-
-#choices button.incorrect-choice {
-  background-color: #ef9a9a !important; 
-  color: white;
-  border-color: #e57373 !important;
-  box-shadow: 0 3px 8px rgba(180, 0, 0, 0.2);
-}
-
-#difficulty-selection button {
-  margin-top: 20px;
-  background-color: #ffcc80; 
-  color: #4a4a4a; 
-  border: 1px solid #ffb74d;
-}
-
-#difficulty-selection button:hover:not(:disabled) {
-  background-color: #ffb74d; 
-  color: white; 
-}
-
-/* 鳴き声ボタンのスタイル */
-#play-cry-btn {
-    background-color: #4db6ac; 
-    color: white;
-    font-size: 16px;
-    margin-top: 10px;
-    padding: 10px 15px;
-    border-radius: 15px;
-    width: 100%;
-}
-#play-cry-btn:hover:not(:disabled) {
-    background-color: #26a69a;
-    transform: translateY(-2px);
-}
-
-
-#hint-area #show-text-hint-btn { 
-  width: 100%; 
-  margin: 15px 0 10px 0; 
-  font-size: 16px; 
-  padding: 10px;
-  background-color: #80cbc4; 
-  border: 1px solid #4db6ac;
-  color: white;
-  border-radius: 15px; 
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-}
-
-#hint-area #show-text-hint-btn:hover:not(:disabled) {
-  background-color: #4db6ac; 
-}
-
-#hint-area #text-hint-display {
-  background-color: #fff9c4; 
-  border: 1px dashed #ffeb3b; 
-  padding: 12px;
-  margin-bottom: 15px;
-  border-radius: 10px; 
-  color: #6a6a6a; 
-  font-size: 0.95em;
-  text-align: left;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); 
-}
-
-
-/* リセットボタンの新しいスタイル */
-#reset-button {
-  background-color: #b3e5fc; 
-  color: #0277bd; 
-  border: 1px solid #4fc3f7;
-  padding: 10px; 
-  font-size: 16px;
-  margin-top: 10px; 
-}
-
-#reset-button:hover {
-  background-color: #81d4fa;
-  transform: translateY(-1px);
-}
-
-
-/* スコア表示 */
-#score-display {
-  font-size: 1.3em; 
-  color: #64b5f6; 
-  margin-bottom: 18px;
-  font-weight: bold;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-#question {
-  color: #6a6a6a; 
-  margin-bottom: 20px;
-}
-
-#result-message {
-  margin-top: 20px;
-  font-weight: bold;
-  font-size: 1.3em; 
-  color: #ff7043; 
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-/* 画像コンテナと画像自体のスタイル */
-#pokemon-image-container {
-    height: 150px; 
+    font-family: 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+    background: linear-gradient(135deg,#fd9191);
+    margin: 0;
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 15px 0 20px 0;
-    background-color: #f7f7f7; 
+    min-height: 100vh;
+}
+
+.quiz-container {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 40px rgba(62, 37, 37, 0.2);
+    text-align: center;
+}
+
+/* タイトルエリア */
+.main-title {
+    font-size: 2.5em;
+    color: #f1c32d;
+    margin: 0 0 10px 0;
+    font-weight: 800;
+}
+
+.quiz-description {
+    font-size: 1em;
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+/* ボタンの共通スタイル */
+button {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+    border: none;
     border-radius: 10px;
-    border: 1px solid #eee;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-#pokemon-image {
-    max-width: 120px; 
-    max-height: 120px;
-    image-rendering: -moz-crisp-edges;
+button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(222, 129, 129, 0.1);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* 難易度ボタン */
+.diff-btn {
+    padding: 18px;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.easy-color {
+    background-color: #f7a597;
+    color: white;
+}
+
+.easy-color:hover:not(:disabled) {
+    background-color: #f1c32d;
+}
+
+.hard-color {
+    background-color: #f77f6a;
+    color: white;
+}
+
+.hard-color:hover:not(:disabled) {
+    background-color: #f1c32d;
+}
+
+/* クイズ画面 */
+.score-text {
+    font-size: 1em;
+    color: #f1c32d;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.question-number {
+    font-size: 2em;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.question-text {
+    color: #333;
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+/* 選択肢ボタン */
+#choices button {
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 15px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+#choices button:hover:not(:disabled) {
+    background-color: #e0e0e0;
+}
+
+#choices button.correct-choice {
+    background-color: #4CAF50 !important;
+    color: white;
+}
+
+#choices button.incorrect-choice {
+    background-color: #f44336 !important;
+    color: white;
+}
+
+/* ヒントボタン */
+.hint-btn {
+    background-color: #f1c32d;
+    color: white;
+    padding: 12px;
+    font-size: 15px;
+}
+
+.hint-btn:hover:not(:disabled) {
+    background-color: #FFB300;
+}
+
+/* ヒント表示エリア */
+#hint-display {
+    background-color: #f9f9f9;
+    border: 2px solid #e0e0e0;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 120px;
+}
+
+/* ヒント画像（シルエット効果） */
+#hint-display img {
+    max-width: 100px;
+    max-height: 100px;
+    filter: brightness(0);
     image-rendering: pixelated;
-    transition: opacity 0.3s, filter 0.5s ease-out; 
 }
 
-/* クラシックな黒シルエットヒント */
-#pokemon-image.silhouette-hint {
-    filter: brightness(0) contrast(0);
-    opacity: 1; 
+/* ヒント鳴き声ボタン */
+#hint-display button {
+    background-color: #f4718e;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    width: auto;
+    margin: 0;
 }
 
+#hint-display button:hover {
+    background-color: #f1c32d;
+}
 
-/* 結果画面でのスコア表示を3.5emに拡大 */
+/* リセットボタン */
+.reset-btn {
+    background-color: #9e9e9e;
+    color: white;
+    padding: 12px;
+    font-size: 15px;
+    margin-top: 30px;
+}
+
+.reset-btn:hover {
+    background-color: #757575;
+}
+
+/* シェアボタン */
+.share-btn {
+    background-color: #f4718e !important;
+    color: white !important;
+    padding: 18px !important;
+    font-size: 18px !important;
+    margin-top: 20px !important;
+    margin-bottom: 10px !important;
+}
+
+.share-btn:hover {
+    background-color: #f1c32d !important;
+}
+
+/* 結果メッセージ */
+#result-message {
+    margin: 15px 0;
+    font-weight: 600;
+    font-size: 1.1em;
+    min-height: 25px;
+}
+
+/* 結果画面 */
 .final-score {
-  font-size: 3.5em !important; 
-  font-weight: bold;
-  color: #ff7043 !important; 
-  padding: 20px 0;
-  line-height: 1.1;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+    font-size: 4em !important;
+    font-weight: 800;
+    color: #ea7366 !important;
+    margin: 20px 0;
+}
+
+#result-retry-button {
+    background-color: #f77f6a !important;
+    color: rgb(164, 162, 162) !important;
+    padding: 18px !important;
+    font-size: 18px !important;
+    margin-top: 20px !important;
+}
+
+#result-retry-button:hover {
+    background-color: #f1c32d !important;
 }
