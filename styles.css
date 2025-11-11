@@ -221,7 +221,7 @@ button:disabled {
 
 #result-retry-button {
     background-color: #f77f6a !important;
-    color: rgb(164, 162, 162) !important;
+    color: rgb(255, 255, 255) !important;
     padding: 18px !important;
     font-size: 18px !important;
     margin-top: 20px !important;
